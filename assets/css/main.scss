@@ -1,17 +1,7 @@
-// assets/css/main.scss
-
 ---
-// Empty front matter tells Jekyll to process this file
 ---
 
-// 1. Import variables first so they are available to all other files.
-@import "variables";
-
-// 2. Import base styles.
-@import "base";
-
-// 3. Import components.
-@import "sidebar";
-@import "components";
-
-// You can still add other styles here if needed.
+@use "variables" as *;
+@use "base" as *;
+@use "sidebar" as *;
+@use "components" as *;

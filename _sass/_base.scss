@@ -1,5 +1,7 @@
 // _sass/_base.scss
 
+@use 'variables' as *;
+
 body {
   font-family: $font-family-base;
 }
@@ -20,4 +22,15 @@ table {
   tr:nth-child(even) {
     background-color: $table-stripe-color;
   }
+}
+
+// This will center the content within the main content area
+.main {
+  text-align: center;
+}
+
+// Style the logo image we gave a class to earlier
+.logo-image {
+  max-width: 400px; // Or whatever size you prefer
+  height: auto;
 }

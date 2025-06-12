@@ -1,5 +1,7 @@
 // _sass/_sidebar.scss
 
+@use 'variables' as *;
+
 .sidenav {
   height: 100%;
   width: $sidebar-width; // Use variable
@@ -39,4 +41,21 @@
       font-size: $font-size-medium; // Use variable
     }
   }
+}
+
+.sidebar-items-centered {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sidebar-donate-button {
+  height: 100px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.sidebar-social-icon {
+  width: 30px;
+  height: auto;
+  margin-bottom: 15px;
 }

@@ -1,5 +1,8 @@
 // _sass/_components.scss
 
+@use 'variables' as *;
+@use 'sass:color';
+
 .button {
   background-color: $primary-color;
   border: none;
@@ -15,11 +18,11 @@
 }
 
 details {
-  // --- NESTING ---
   > summary {
     padding: 4px;
     width: 200px;
-    background-color: darken($primary-color, 1%); // Slightly darken the orange
+    // 2. This is the new, recommended syntax
+    background-color: color.adjust($primary-color, $lightness: -1%);
     border: none;
     box-shadow: 1px 1px 2px $box-shadow-color;
     cursor: pointer;
@@ -32,7 +35,6 @@ details {
   }
 }
 
-// Your utility class
 .sidebar-image {
   width: 100%;
   height: auto;

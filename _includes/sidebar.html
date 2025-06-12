@@ -1,40 +1,24 @@
-{% assign homeurl = site.baseurl | append: "/" %}
+<!-- _includes/sidebar.html -->
+<div class="sidenav">
 
-<aside class="sidebar">
-  <div class="sidebar-portrait">
-    <img src="/files/headshot-small.jpg" alt="Headshot of Alexander Gude"/>
+  <a href="{{ '/' | relative_url }}">Home</a>
+  <a href="{{ '/pfc.html' | relative_url }}">About Us</a>
+  <a href="{{ '/KeyDates.html' | relative_url }}">Key Dates</a>
+  <a href="{{ '/PFCEvents.html' | relative_url }}">PFC Events</a>
+  <a href="{{ '/Fundraisers.html' | relative_url }}">Fundraisers</a>
+  <a href="mailto:holbrookpfcweb@gmail.com">Contact Us</a>
+  <a href="https://1stplacespiritwear.com/schools/CA/Concord/Holbrook+Language+Academy/" target="_blank" rel="noopener noreferrer">Store</a>
+
+  <div class="sidebar-items-centered">
+    <a href="#">
+      <img src="{{ '/assets/images/donate.png' | relative_url }}" alt="Donate Now" class="sidebar-donate-button">
+    </a>
+
+    <a href="https://www.facebook.com/holbrookpfcclub/" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/assets/images/fb_logo.png' | relative_url }}" alt="Find us on Facebook" class="sidebar-social-icon">
+    </a>
+
+    <img class="sidebar-image" src="{{ '/assets/images/jet.jpg' | relative_url }}" alt="Holbrook Jets Mascot">
   </div>
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <div class="site-title">
-        <a href="{{ homeurl }}" title="Home">{{ site.title }}</a>
-      </div>
-      <p class="lead">{{ site.description }}</p>
-    </div>
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == homeurl %} active{% endif %}" href="{{ homeurl }}">Home</a>
-
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with `layout: page` in the front-matter.
-      {% endcomment %}
-
-      {% for node in site.pages %}
-        {% if node.title != null and node.sidebar_include == true %}
-          {% unless node.url contains "page" %} {% comment %} Paginated Blog pages should not be included in the sidebar. {% endcomment %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}{{ node.url }}">{{ node.title }}</a>
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-
-    </nav>
-
-    {% comment %} Legal text {% endcomment %}
-    <div>
-      <small>
-      &copy;&nbsp;<time datetime="{{ '2016-01-01T00:00:00Z' | date_to_xmlschema }}">2016</time>&ndash;<time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> by {{ site.author.name }}
-      </small>
-    </div>
-
-  </div>
-</aside>
+</div>
