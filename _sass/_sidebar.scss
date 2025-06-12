@@ -24,6 +24,11 @@
     &:hover { // The '&' refers to the parent selector ('a')
       color: $text-color-light-hover; // Use variable
     }
+
+    &.active {
+      color: $primary-color;
+      font-weight: bold;
+    }
   }
 }
 

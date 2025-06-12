@@ -1,20 +1,26 @@
 <!-- _includes/sidebar.html -->
 <div class="sidenav">
 
-  <a href="{{ '/' | relative_url }}">Home</a>
-  <a href="{{ '/pfc.html' | relative_url }}">About Us</a>
-  <a href="{{ '/KeyDates.html' | relative_url }}">Key Dates</a>
-  <a href="{{ '/PFCEvents.html' | relative_url }}">PFC Events</a>
-  <a href="{{ '/Fundraisers.html' | relative_url }}">Fundraisers</a>
-  <a href="mailto:holbrookpfcweb@gmail.com">Contact Us</a>
-  <a href="https://1stplacespiritwear.com/schools/CA/Concord/Holbrook+Language+Academy/" target="_blank" rel="noopener noreferrer">Store</a>
+  {% for p in site.pages %}
+    {% if p.sidebar_include == true %}
+      <a class="nav-item 
+         {% comment %} Add 'active' class if the page url matches {% endcomment %}
+         {% if page.url == p.url %}active{% endif %}" 
+         href="{{ p.url | relative_url }}">
+        {{ p.title }}
+      </a>
+    {% endif %}
+  {% endfor %}
+
+  <a class="nav-item" href="mailto:{{ site.email }}">Contact Us</a>
+  <a class="nav-item" href="https://1stplacespiritwear.com/schools/CA/Concord/Holbrook+Language+Academy/" target="_blank" rel="noopener noreferrer">Store</a>
 
   <div class="sidebar-items-centered">
     <a href="#">
       <img src="{{ '/assets/images/donate.png' | relative_url }}" alt="Donate Now" class="sidebar-donate-button">
     </a>
 
-    <a href="https://www.facebook.com/holbrookpfcclub/" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.facebook.com/{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer">
       <img src="{{ '/assets/images/fb_logo.png' | relative_url }}" alt="Find us on Facebook" class="sidebar-social-icon">
     </a>
 

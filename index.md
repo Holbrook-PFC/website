@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+sidebar_include: true
 ---
 
 ![PFC Logo]({{ '/assets/images/pfclogo.png' | relative_url }}){: .logo-image }

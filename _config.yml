@@ -1,6 +1,22 @@
+# _config.yml
+
 # Dependencies
 plugins:
     - jekyll-feed
     - jekyll-redirect-from
     - jekyll-seo-tag
     - jekyll-sitemap
+
+# Site Info
+title: Holbrook Language Academy PFC
+description: "The official website for the Holbrook Language Academy Parent Faculty Club (PFC)."
+
+# Contact & Social Info
+email: holbrookpfcweb@gmail.com
+social:
+  facebook: holbrookpfcclub
+
+# Build Settings
+# This makes image paths and links work correctly.
+baseurl: "" # Keep this empty if you are not hosting in a subdirectory.
+url: "" # The final domain of your site, e.g., "http://holbrookpfc.org"
