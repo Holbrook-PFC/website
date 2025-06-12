@@ -1,0 +1,28 @@
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Theme Color for webbrowsers -->
+  <meta name="theme-color" content="hsl(214, 52%, 42%)">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" type="text/css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
+
+  <!-- Age rating -->
+  <meta name="rating" content="General">
+
+  <!-- RSS (well, actually Atom) -->
+  {% comment %} From jekyll/jekyll-feed {% endcomment %}
+  {% feed_meta %}
+
+  <!-- Twitter Card and OpenGraph Tags -->
+  {% comment %} From jekyll/jekyll-seo-tag {% endcomment %}
+  {% seo %}
+
+</head>

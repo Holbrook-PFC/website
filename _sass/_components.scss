@@ -1,0 +1,39 @@
+// _sass/_components.scss
+
+.button {
+  background-color: $primary-color;
+  border: none;
+  border-radius: 12px;
+  color: $text-color-light;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: $font-size-base;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+details {
+  // --- NESTING ---
+  > summary {
+    padding: 4px;
+    width: 200px;
+    background-color: darken($primary-color, 1%); // Slightly darken the orange
+    border: none;
+    box-shadow: 1px 1px 2px $box-shadow-color;
+    cursor: pointer;
+  }
+
+  > p {
+    background-color: #fff;
+    padding: 4px;
+    margin: 0;
+  }
+}
+
+// Your utility class
+.sidebar-image {
+  width: 100%;
+  height: auto;
+}

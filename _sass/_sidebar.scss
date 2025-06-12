@@ -1,0 +1,42 @@
+// _sass/_sidebar.scss
+
+.sidenav {
+  height: 100%;
+  width: $sidebar-width; // Use variable
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $secondary-color; // Use variable
+  overflow-x: hidden;
+  padding-top: 20px;
+
+  // --- NESTING ---
+  a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: $font-size-large; // Use variable
+    color: $text-color-light; // Use variable
+    display: block;
+
+    &:hover { // The '&' refers to the parent selector ('a')
+      color: $text-color-light-hover; // Use variable
+    }
+  }
+}
+
+// Styles for the main content area that depend on the sidebar
+.main {
+  margin-left: $sidebar-width; // Use variable
+  padding: 6px 6px 6px 32px;
+}
+
+// Nesting the media query makes it clear what it affects
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+    a {
+      font-size: $font-size-medium; // Use variable
+    }
+  }
+}

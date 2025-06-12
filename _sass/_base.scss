@@ -1,0 +1,23 @@
+// _sass/_base.scss
+
+body {
+  font-family: $font-family-base;
+}
+
+table {
+  font-family: $font-family-special;
+  border-collapse: collapse;
+  width: 50%;
+
+  // --- NESTING ---
+  // Nesting makes it clear these styles belong to the table
+  td, th {
+    border: 1px solid $border-color;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: $table-stripe-color;
+  }
+}

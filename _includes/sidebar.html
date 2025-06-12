@@ -1,0 +1,40 @@
+{% assign homeurl = site.baseurl | append: "/" %}
+
+<aside class="sidebar">
+  <div class="sidebar-portrait">
+    <img src="/files/headshot-small.jpg" alt="Headshot of Alexander Gude"/>
+  </div>
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <div class="site-title">
+        <a href="{{ homeurl }}" title="Home">{{ site.title }}</a>
+      </div>
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == homeurl %} active{% endif %}" href="{{ homeurl }}">Home</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with `layout: page` in the front-matter.
+      {% endcomment %}
+
+      {% for node in site.pages %}
+        {% if node.title != null and node.sidebar_include == true %}
+          {% unless node.url contains "page" %} {% comment %} Paginated Blog pages should not be included in the sidebar. {% endcomment %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}{{ node.url }}">{{ node.title }}</a>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+
+    </nav>
+
+    {% comment %} Legal text {% endcomment %}
+    <div>
+      <small>
+      &copy;&nbsp;<time datetime="{{ '2016-01-01T00:00:00Z' | date_to_xmlschema }}">2016</time>&ndash;<time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> by {{ site.author.name }}
+      </small>
+    </div>
+
+  </div>
+</aside>
